@@ -1,14 +1,22 @@
-import { navbarLogoIcon, aboutUs } from "../utils/constants";
-// import { aboutUs } from "../utils/constants";
+import { navbarLogoIcon } from "../utils/constants";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 let Navbar = () => {
   let [loginButtonval, setLoginButtonval] = useState("login");
   return (
     <div id="navbar">
       <img className="navimg navswiggylogo" src={navbarLogoIcon} alt="swiggy" />
-      <h1>Navbar</h1> <h2>HOME</h2>
-      <img className="navimg aboutus" src={aboutUs} alt="swiggy" />
+      <Link to="/">
+        <h1>HOME</h1>
+      </Link>
+      <Link to="/AboutUS">
+        <h1>ABOUT US</h1>
+      </Link>
+      <Link to="/ContactUS">
+        <h1>CONTACT US</h1>
+      </Link>
+
       <button
         id="login"
         onClick={() => {

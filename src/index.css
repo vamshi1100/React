@@ -1,18 +1,15 @@
-img {
-  width: 300px;
-}
 #navbar,
 #footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: 2px solid black;
 }
 
 .SwiggyComponentContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .child {
@@ -33,32 +30,33 @@ img {
   background-color: rgb(202, 216, 216);
   margin: 20px;
 }
-h1 {
-  white-space: nowrap; /* keep text in one line */
-  overflow: hidden; /* hide extra text */
-  text-overflow: ellipsis; /* show ... */
-  width: 400px;
+
+#navbar h1 {
+  margin: 0;
 }
-.btnContainer {
-  padding: 20px;
-  width: 500px;
+
+#swiggycomponentdiv .imgDiv {
+  margin-left: 30px;
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height: 350px;
+  border: 2px solid black;
 }
 
 .btnContainer {
   display: flex;
   gap: 20px;
+  padding: 20px;
+  width: 500px;
 }
 
-.navimg.aboutus {
+.navimg.starIcon {
   height: 60px;
   width: 94px;
 }
-.navimg.navswiggylogo {
-  height: 60px;
-  width: 94px;
-}
-
+.navimg.navswiggylogo,
 #login {
-  height: 60px;
+  height: 45px;
   width: 94px;
 }
