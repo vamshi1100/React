@@ -8,12 +8,14 @@ import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
 import ErrorElement from "./components/ErrorElement";
 import RestaurantMenu from "./components/RestaurantMenu";
+import NotAboutUS from "./components/NotAboutUS";
 let AppLayout = () => {
   return (
     <div>
       <Navbar />
       <Outlet />
       {/* <SwiggyComponentBody /> */}
+      <NotAboutUS />
       <Footer />
     </div>
   );
