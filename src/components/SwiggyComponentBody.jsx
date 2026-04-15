@@ -9,19 +9,17 @@ let SwiggyComponentBody = () => {
   let [searchVal, setSearchVal] = useState("");
   let [filterSearch, setFiltersearch] = useState([]);
   useEffect(() => {
-    debugger;
     let fetchData = async () => {
       const data = await fetch(swigggyApi);
       const json = await data.json();
-      debugger;
       let restaurantsdata =
         json.data.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
       // let restaurantsdata =
       //   json.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
       //     ?.restaurants;
-      setResCardsData(restaurantsdata);
       setFiltersearch(restaurantsdata);
+      setResCardsData(restaurantsdata);
     };
     fetchData();
   }, []);
@@ -30,7 +28,6 @@ let SwiggyComponentBody = () => {
     return <ShimmerUI />;
   }
 
-  debugger;
   return (
     <>
       <div className="btnContainer">
@@ -40,7 +37,7 @@ let SwiggyComponentBody = () => {
               return elem.info.avgRating > 4.3;
             });
             console.log(ResCards);
-            setResCardsData(ResCards);
+            setFiltersearch(ResCards);
           }}
         >
           Filter
@@ -68,7 +65,8 @@ let SwiggyComponentBody = () => {
         </div>
       </div>
       <div className="SwiggyComponentContainer">
-        {filterSearch.map((elem) => (
+        {
+        filterSearch.map((elem) => (
           <div id="swiggycomponentdiv" key={elem.info.id} className="child">
             <Link to={`/listRestaurantMenu/${elem.info.id}`}>
               <h1 id="names">{elem.info.name}</h1>
