@@ -3,11 +3,14 @@ import ShimmerUI from "./ShimmerUI";
 import { swigggyApi } from "../utils/constants";
 import noImage from "../utils/noimage.png";
 import { Link } from "react-router-dom";
+import useOnlineOffline from './../utils/useOnlineOffline';
 
 let SwiggyComponentBody = () => {
   let [ResCardsData, setResCardsData] = useState([]);
   let [searchVal, setSearchVal] = useState("");
   let [filterSearch, setFiltersearch] = useState([]);
+  let onlinestatus = useOnlineOffline();
+
   useEffect(() => {
     let fetchData = async () => {
       const data = await fetch(swigggyApi);
@@ -61,8 +64,9 @@ let SwiggyComponentBody = () => {
             }}
           >
             search
-          </button>
+          </button>        
         </div>
+        <button>{onlinestatus == "online" ? "💚" : "❤️"}</button>
       </div>
       <div className="SwiggyComponentContainer">
         {
