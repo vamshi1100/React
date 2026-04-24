@@ -1,9 +1,14 @@
 import styles from "./../contactUsStyles.module.css";
+import StyledButton from "../styledComponents/Button.styles";
+import { StyledButtonProps ,FancyButtonInherit} from "../styledComponents/Button.styles";
+import GlobalStyles from "../styledComponents/GlobalStyles";
+
 const ContactUs = (props) => {
 let color=props.flag==true?"green":"red";
 debugger;
   return (
     <div>
+      <GlobalStyles />
       {/* inline style */}
       
       <h1 style={{color:color,fontSize:"104px"}} className={`${styles.paragraph} ${props.flag?styles.active:""}`}>contact us{props.flag}</h1>
@@ -15,6 +20,10 @@ debugger;
         cumque enim nostrum reiciendis veniam esse pariatur, fuga sint beatae
         natus tenetur in minima, doloremque quo.
       </p>
+      <StyledButton>Call ME</StyledButton>
+      <StyledButtonProps flag={true}>Call ME</StyledButtonProps>
+      <FancyButtonInherit flag={false}>Call ME</FancyButtonInherit>
+
     </div>
   );
 };
