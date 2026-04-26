@@ -1,7 +1,7 @@
 let Footer = () => {
   return (
     <div id="footer">
-      <h1>Footer</h1> <h2>Link1</h2> <h2>Link2</h2>
+      <p className="paragraph">Footer</p> <p className="paragraph">Link1</p> <p className="paragraph">Link2</p>
     </div>
   );
 };
