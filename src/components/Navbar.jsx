@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 let Navbar = () => {
   let [loginButtonval, setLoginButtonval] = useState("login");
   return (
-    <div id="navbar">
-      <img className="navimg navswiggylogo" src={navbarLogoIcon} alt="swiggy" />
+    <div id="navbar" className="flex justify-between align-middle p-5">
+      <img className="navimg navswiggylogo w-10 h-6" src={navbarLogoIcon} alt="swiggy" />
       <Link to="/">
         <h1>HOME</h1>
       </Link>
@@ -22,7 +22,7 @@ let Navbar = () => {
         onClick={() => {
           // loginButtonval == "login" ? "logout" : "login";
           setLoginButtonval(loginButtonval == "login" ? "logout" : "login");
-        }}
+        }} className="h-10 w-20"
       >
         {loginButtonval}
       </button>

@@ -33,7 +33,7 @@ let SwiggyComponentBody = () => {
 
   return (
     <>
-      <div className="btnContainer">
+      <div className="flex sm:justify-start md:justify-center lg:justify-end">
         <button
           onClick={() => {
             let ResCards = ResCardsData.filter((elem) => {
@@ -45,8 +45,8 @@ let SwiggyComponentBody = () => {
         >
           Filter
         </button>
-        <div id="search">
-          <input
+        <div className="ml-2">
+          <input className="border-2 border-black"
             type="text"
             value={searchVal}
             onChange={(e) => {
@@ -62,20 +62,21 @@ let SwiggyComponentBody = () => {
               });
               setFiltersearch(filterSearchVal);
             }}
+           className="ml-2 uppercase " 
           >
             search
           </button>        
         </div>
         <button>{onlinestatus == "online" ? "💚" : "❤️"}</button>
       </div>
-      <div className="SwiggyComponentContainer">
+      <div className="card"> 
         {
         filterSearch.map((elem) => (
-          <div id="swiggycomponentdiv" key={elem.info.id} className="child">
+          <div  key={elem.info.id} className="mb-10 border-5 border-amber-300" >
             <Link to={`/listRestaurantMenu/${elem.info.id}`}>
               <h1 id="names">{elem.info.name}</h1>
             </Link>
-            <div className="imgDiv">
+            <div className="imgDiv w-[400px] relative">
               <img
                 src={
                   "https://media-assets.swiggy.com/swiggy/image/upload/" +
@@ -87,9 +88,9 @@ let SwiggyComponentBody = () => {
                   e.target.src = noImage;
                 }}
               />
+              <div className="badge"><h1>{elem.info.avgRating}</h1></div>
             </div>
-
-            <h1>{elem.info.avgRating}</h1>
+                   
           </div>
         ))}
       </div>
