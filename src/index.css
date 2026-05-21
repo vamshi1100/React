@@ -1,62 +1,68 @@
-#navbar,
-#footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+@import url("https://fonts.googleapis.com/css2?family=Angkor&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1e40af;
+  --color-blackColor: #000000;
+  --spacing-5: 5px;
+  --text-custom-size: 40px;
+  --font-Angkor-custom: "Angkor";
 }
 
-.SwiggyComponentContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.badge {
+  @apply absolute top-0 text-white bg-black w-15 text-center rounded-full m-5;
+}
+
+.card {
+  @apply flex flex-row justify-between flex-wrap p-10;
+}
+
+.grid-container {
+  display: grid;
+  height: 500px;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 2px solid rgb(211, 33, 33);
+  margin: 10px;
   justify-content: center;
+  align-content: center;
+  /* grid-template-areas: 'item1 item1'
+'item2 item3'
+'item4 item4'; */
 }
 
-.child {
-  width: 33.3%;
-  height: auto;
-}
-.shimmerUiContainer {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  background-color: rgb(202, 193, 193);
-  width: 100%;
-  height: 700px;
-  justify-content: center;
-}
-.shimmerUiChild {
-  width: 30%;
-  background-color: rgb(202, 216, 216);
-  margin: 20px;
-}
-
-#navbar h1 {
-  margin: 0;
-}
-
-#swiggycomponentdiv .imgDiv {
-  margin-left: 30px;
-  display: flex;
-  justify-content: center;
-  width: 300px;
-  height: 350px;
+.item {
+  margin: 10px;
   border: 2px solid black;
 }
 
-.btnContainer {
-  display: flex;
-  gap: 20px;
-  padding: 20px;
-  width: 500px;
+.item1 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.item2 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 
-.navimg.starIcon {
-  height: 60px;
-  width: 94px;
+/* .item1{
+ grid-area:item1;
 }
-.navimg.navswiggylogo,
-#login {
-  height: 45px;
-  width: 94px;
+.item2{
+ grid-area:item2;
 }
+.item3{
+  grid-area: item3;
+}
+.item4{
+  grid-area: item4;
+}  */
+
+/* .item4{
+  align-self: start;
+  justify-self: end;
+ } */
