@@ -3,13 +3,16 @@ import ShimmerUI from "./ShimmerUI";
 import { swigggyApi } from "../utils/constants";
 import noImage from "../utils/noimage.png";
 import { Link } from "react-router-dom";
-import useOnlineOffline from './../utils/useOnlineOffline';
+import useOnlineOffline from "./../utils/useOnlineOffline";
+import { RestaurantCard, HOCRestaurantCard } from "./RestaurantCard";
 
 let SwiggyComponentBody = () => {
   let [ResCardsData, setResCardsData] = useState([]);
   let [searchVal, setSearchVal] = useState("");
   let [filterSearch, setFiltersearch] = useState([]);
   let onlinestatus = useOnlineOffline();
+  // HOC Component
+  const PromotedRestaurantCard = HOCRestaurantCard(RestaurantCard);
 
   useEffect(() => {
     let fetchData = async () => {
@@ -32,7 +35,7 @@ let SwiggyComponentBody = () => {
   }
 
   return (
-    <>
+    <div className="pr-8">
       <div className="flex sm:justify-start md:justify-center lg:justify-end">
         <button
           onClick={() => {
@@ -46,7 +49,8 @@ let SwiggyComponentBody = () => {
           Filter
         </button>
         <div className="ml-2">
-          <input className="border-2 border-black"
+          <input
+            className="border-2 border-black"
             type="text"
             value={searchVal}
             onChange={(e) => {
@@ -62,39 +66,24 @@ let SwiggyComponentBody = () => {
               });
               setFiltersearch(filterSearchVal);
             }}
-           className="ml-2 uppercase " 
+            className="ml-2 uppercase "
           >
             search
-          </button>        
+          </button>
         </div>
         <button>{onlinestatus == "online" ? "💚" : "❤️"}</button>
       </div>
-      <div className="card"> 
-        {
-        filterSearch.map((elem) => (
-          <div  key={elem.info.id} className="mb-10 border-5 border-amber-300" >
-            <Link to={`/listRestaurantMenu/${elem.info.id}`}>
-              <h1 id="names">{elem.info.name}</h1>
-            </Link>
-            <div className="imgDiv w-[400px] relative">
-              <img
-                src={
-                  "https://media-assets.swiggy.com/swiggy/image/upload/" +
-                  elem.info.cloudinaryImageId
-                }
-                alt="Restaurant"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = noImage;
-                }}
-              />
-              <div className="badge"><h1>{elem.info.avgRating}</h1></div>
-            </div>
-                   
-          </div>
-        ))}
+      <div className="flex flex-wrap justify-between">
+        {filterSearch.map((elem) => {
+          return elem?.info?.veg ? (
+            <PromotedRestaurantCard filterSearch={[elem]} />
+          ) : (
+            <RestaurantCard filterSearch={[elem]} />
+          );
+          console.log(elem);
+        })}
       </div>
-    </>
+    </div>
   );
 };
 

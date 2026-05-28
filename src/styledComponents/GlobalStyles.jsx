@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 let GlobalStyles=createGlobalStyle`
 body{
-background-color:#b9ebeb;
+font-family: "Times New Roman", Times, serif;
 }
 `
 export default GlobalStyles;

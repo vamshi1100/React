@@ -7,7 +7,7 @@ const ContactUs = (props) => {
 let color=props.flag==true?"green":"red";
 debugger;
   return (
-    <div>
+    <div className="p-6">
       <GlobalStyles />
       {/* inline style */}
       
