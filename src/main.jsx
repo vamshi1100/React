@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { lazy,Suspense } from "react";
 import SwiggyComponentBody from "./components/SwiggyComponentBody";
@@ -11,13 +11,17 @@ let ContactUs=lazy(()=>{return import("./components/ContactUs")});
 // import ContactUs from "./components/ContactUs";
 import ErrorElement from "./components/ErrorElement";
 import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./utils/UserContext";
 let AppLayout = () => {
+  let [userName,setUserName]=useState('vamshi')
   return (
     <div>
+      <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
       <Navbar />
       <Outlet />
       {/* <SwiggyComponentBody /> */}
       <Footer />
+      </UserContext.Provider>
     </div>
   );
 };

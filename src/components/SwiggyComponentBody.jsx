@@ -42,7 +42,7 @@ let SwiggyComponentBody = () => {
             let ResCards = ResCardsData.filter((elem) => {
               return elem.info.avgRating > 4.3;
             });
-            console.log(ResCards);
+            //console.log(ResCards);
             setFiltersearch(ResCards);
           }}
         >
@@ -60,7 +60,7 @@ let SwiggyComponentBody = () => {
           />
           <button
             onClick={() => {
-              console.log(searchVal);
+              //console.log(searchVal);
               let filterSearchVal = ResCardsData.filter((elem) => {
                 return elem.info.name.includes(searchVal);
               });

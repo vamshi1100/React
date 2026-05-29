@@ -1,8 +1,9 @@
 import React from "react";
 import User from "./User";
+import UserContext from "../utils/UserContext";
 class UserClass extends React.Component {
   constructor(props) {
-    console.log("child constructor");
+    //console.log("child constructor");
 
     super(props);
     this.state = {
@@ -21,19 +22,19 @@ class UserClass extends React.Component {
     let data = await fetch("https://api.github.com/users/vamshi1100");
     let jsonData = await data.json();
     this.setState({ userInfo: jsonData });
-    console.log("child componentDidMount");
+    //console.log("child componentDidMount");
   }
   componentDidUpdate() {
-    console.log("componentdid update");
+    //console.log("componentdid update");
   }
   componentWillUnmount() {
-    console.log("component is unmounted");
+    //console.log("component is unmounted");
   }
   render() {
     let { name, avatar_url, url } = this.state.userInfo;
     const { count1, count2 } = this.state.count;
 
-    console.log("child render");
+    //console.log("child render");
 
     return (
       <div>
@@ -44,6 +45,11 @@ class UserClass extends React.Component {
             <a href={url} className="text-blue-600 hover:underline">
               {url}
             </a>
+          </div>
+          <div>
+            <UserContext.Consumer>
+              {(data) => <h1>{data.loggedInUser}</h1>}
+            </UserContext.Consumer>
           </div>
 
           <img src={avatar_url} alt="dummy image" />
