@@ -20,7 +20,7 @@
 
 .grid-container {
   display: grid;
-  height: 500px;
+  height: 200px;
   grid-template-columns: 1fr 1fr 1fr;
   border: 2px solid rgb(211, 33, 33);
   margin: 10px;

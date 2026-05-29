@@ -11,13 +11,13 @@ const User = (props) => {
           count1:{count1} count2:{count2}
         </h1>
       </div>
-      <div className="item item2">
+      <div className="item item2 text-center">
               <button
         onClick={() => {
           //should not  change the state directly
           //setCount1(++count1);
           setCount1(count1 + 1);
-        }}>incrementor</button>
+        }} className="w-[200px] bg-black text-white">incrementor</button>
       </div>
       <div className="item item3"><h1>name:{props.name}</h1></div>
       <div className="item item4"><h2>location:{props.location}</h2></div>

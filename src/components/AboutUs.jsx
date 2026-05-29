@@ -18,15 +18,21 @@ import React from "react";
 class AboutUs extends React.Component {
   constructor(props) {
     super(props);
-    console.log("parent constructor");
+    // console.log("parent constructor");
   }
   componentDidMount() {
-    console.log("parent componentDidMount");
+    // console.log("parent componentDidMount");
   }
   render() {
-    console.log("parent render");
+    //console.log("parent render");
     return (
-      <div>
+      <div className="p-6">
+        <div>
+          <h1 className="text-green-500 bg-black border-4  border-blue-900 text-4xl font-extrabold  italic font-serif">
+            Class Practice
+          </h1>
+          <UserClass name="vamshi class" location="bangalore class" />
+        </div>
         <div>
           <h1 className="text-primary  m-5 border-5 border-blackColor text-center">
             @theme is used to create custom design tokens in index.css:
@@ -47,20 +53,9 @@ class AboutUs extends React.Component {
           </h1>
 
           <h1 className="text-green-500 bg-black border-4  border-blue-900 text-4xl font-extrabold  italic font-Angkor-custom">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
-            suscipit. Nostrum, dolores facilis doloremque adipisci, nihil dolor,
-            explicabo deserunt odio natus sint provident a?
+            Function Practice
           </h1>
           <User name="vamshi function" location="bangalore fun" />
-        </div>
-
-        <div>
-          <h1 className="text-green-500 bg-black border-4  border-blue-900 text-4xl font-extrabold  italic font-serif">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur,
-            suscipit. Nostrum, dolores facilis doloremque adipisci, nihil dolor,
-            explicabo deserunt odio natus sint provident a?
-          </h1>
-          <UserClass name="vamshi class" location="bangalore class" />
         </div>
       </div>
     );

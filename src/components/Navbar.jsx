@@ -1,12 +1,14 @@
 import { navbarLogoIcon } from "../utils/constants";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
-
+import UserContext from "../utils/UserContext";
 let Navbar = () => {
-  let [loginButtonval, setLoginButtonval] = useState("login");
+  let [loginButtonval, setLoginButtonval] = useState("LOGIN");
+  const { loggedInUser } = useContext(UserContext);
+
   return (
-    <div id="navbar" className="flex justify-between align-middle p-5">
-      <img className="navimg navswiggylogo w-10 h-6" src={navbarLogoIcon} alt="swiggy" />
+    <div id="navbar" className="flex justify-between align-middle p-6">
+      <img className="navimg navswiggylogo w-10 h-7" src={navbarLogoIcon} alt="swiggy" />
       <Link to="/">
         <h1>HOME</h1>
       </Link>
@@ -21,11 +23,12 @@ let Navbar = () => {
         id="login"
         onClick={() => {
           // loginButtonval == "login" ? "logout" : "login";
-          setLoginButtonval(loginButtonval == "login" ? "logout" : "login");
+          setLoginButtonval(loginButtonval == "LOGIN" ? "LOGOUT" : "LOGIN");
         }} className="h-10 w-20"
       >
         {loginButtonval}
       </button>
+      <div>{loggedInUser}</div>
     </div>
   );
 };
