@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import noImage from "../utils/noimage.png";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 export const RestaurantCard = (props) => {
   debugger;
+  const dispatch = useDispatch();
+  const handleADD = (elem) => {
+    dispatch(addItem(elem));
+    console.log(elem);
+  };
   return (
     <div className="card flex flex-wrap gap-5 w-[450px] justify-between">
       {props.filterSearch.map((elem) => (
@@ -28,6 +35,13 @@ export const RestaurantCard = (props) => {
             <div className="badge">
               <h1>{elem.info.avgRating}</h1>
             </div>
+            <button
+              onClick={() => {
+                handleADD(elem);
+              }}
+            >
+              ADD+
+            </button>
           </div>
         </div>
       ))}
