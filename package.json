@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test":"jest",
+    "watch-test":"jest --watch"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.12.0",
@@ -20,14 +22,21 @@
     "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-react": "^7.29.7",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.7.0",
+    "babel-jest": "^30.4.1",
     "baseline-browser-mapping": "^2.10.21",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
     "vite": "^5.2.0"
   }
 }
