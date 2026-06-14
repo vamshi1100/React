@@ -23,17 +23,18 @@ class AboutUs extends React.Component {
   componentDidMount() {
     // console.log("parent componentDidMount");
   }
+  debugger;
   render() {
     //console.log("parent render");
     return (
       <div className="p-6">
-        <div>
-          <h1 className="text-green-500 bg-black border-4  border-blue-900 text-4xl font-extrabold  italic font-serif">
-            Class Practice
+        <div className="mb-8">
+          <h1 className="text-center bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white text-4xl md:text-5xl font-extrabold py-6 px-8 rounded-2xl shadow-2xl tracking-wide uppercase border-4 border-white">
+            🚀 GitHub API Fetched and Shown Using Class Based Component
           </h1>
           <UserClass name="vamshi class" location="bangalore class" />
         </div>
-        <div>
+        {/* <div>
           <h1 className="text-primary  m-5 border-5 border-blackColor text-center">
             @theme is used to create custom design tokens in index.css:
             <p>{`
@@ -56,7 +57,7 @@ class AboutUs extends React.Component {
             Function Practice
           </h1>
           <User name="vamshi function" location="bangalore fun" />
-        </div>
+        </div> */}
       </div>
     );
   }

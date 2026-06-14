@@ -8,7 +8,7 @@ const ItemCardList = ({ itemCards }) => {
       {itemCards.map((elem) => {
         // console.log(elem);
         return (
-          <div>
+          <div >
             <p>{elem?.card?.card?.title}</p>
             <p>
               {elem?.card?.card?.itemCards.map((itemElem) => (
