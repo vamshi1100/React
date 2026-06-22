@@ -19,6 +19,7 @@ import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import UseMemoCallbackRef from './components/UseMemoCallbackRef';
 let AppLayout = () => {
   let [userName, setUserName] = useState("VAMSHI REDDY");
   return (
@@ -67,6 +68,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/Cart",
         element: <Cart />,
+      },
+      {
+        path: "/Hooks",
+        element: <UseMemoCallbackRef />,
       },
     ],
     errorElement: <ErrorElement />,
